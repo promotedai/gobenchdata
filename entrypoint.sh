@@ -22,6 +22,12 @@ echo '========================'
 command -v gobenchdata
 gobenchdata version
 env | grep 'INPUT_'
+
+# The default env.GITHUB_ACTOR support seems broken.  Try a different argument
+if [ -z "$OVERRIDE_GITHUB_ACTOR" ]
+then
+  GITHUB_ACTOR="$OVERRIDE_GITHUB_ACTOR"
+fi
 echo "GITHUB_ACTOR=${GITHUB_ACTOR}"
 echo "GITHUB_WORKSPACE=${GITHUB_WORKSPACE}"
 echo "GITHUB_REPOSITORY=${GITHUB_REPOSITORY}"
