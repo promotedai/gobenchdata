@@ -28,6 +28,10 @@ if [[ "$OVERRIDE_GITHUB_ACTOR" ]]
 then
   GITHUB_ACTOR="$OVERRIDE_GITHUB_ACTOR"
 fi
+if [[ -z "$GITHUB_ACTOR_EMAIL" ]]
+then
+  GITHUB_ACTOR_EMAIL="${GITHUB_ACTOR}@users.noreply.github.com"
+fi
 echo "GITHUB_ACTOR=${GITHUB_ACTOR}"
 echo "GITHUB_WORKSPACE=${GITHUB_WORKSPACE}"
 echo "GITHUB_REPOSITORY=${GITHUB_REPOSITORY}"
@@ -37,8 +41,9 @@ echo '========================'
 
 # setup
 mkdir -p /tmp/{gobenchdata,build}
-git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+git config --global user.email "${GITHUB_ACTOR_EMAIL}"
 git config --global user.name "${GITHUB_ACTOR}"
+git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${INPUT_PUBLISH_REPO}
 
 # run benchmarks from configured directory
 echo
