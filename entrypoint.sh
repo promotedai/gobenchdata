@@ -28,6 +28,10 @@ if [[ "$OVERRIDE_GITHUB_ACTOR" ]]
 then
   GITHUB_ACTOR="$OVERRIDE_GITHUB_ACTOR"
 fi
+if [[ "$OVERRIDE_GITHUB_TOKEN" ]]
+then
+  GITHUB_TOKEN="$OVERRIDE_GITHUB_TOKEN"
+fi
 if [[ -z "$GITHUB_ACTOR_EMAIL" ]]
 then
   GITHUB_ACTOR_EMAIL="${GITHUB_ACTOR}@users.noreply.github.com"
