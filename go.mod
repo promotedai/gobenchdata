@@ -1,4 +1,4 @@
-module go.bobheadxi.dev/gobenchdata
+module go.promotedai.dev/gobenchdata
 
 go 1.12
 

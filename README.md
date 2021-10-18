@@ -1,14 +1,14 @@
 # 📉 gobenchdata
 
-[![View Action](https://img.shields.io/badge/view-github%20action-yellow.svg)](https://bobheadxi.dev/r/gobenchdata)
-[![publish@v1](https://github.com/bobheadxi/gobenchdata/workflows/publish@v1/badge.svg)](https://github.com/bobheadxi/gobenchdata/actions?workflow=publish%40v1)
-[![pipeline](https://github.com/bobheadxi/gobenchdata/workflows/pipeline/badge.svg)](https://github.com/bobheadxi/gobenchdata/actions?workflow=pipeline)
-[![demo](https://github.com/bobheadxi/gobenchdata/workflows/demo/badge.svg)](https://github.com/bobheadxi/gobenchdata/actions?workflow=demo)
-[![Demo](https://img.shields.io/website/https/gobenchdata.bobheadxi.dev.svg?down_color=grey&down_message=offline&label=demo&up_message=live)](https://gobenchdata.bobheadxi.dev/)
+[![View Action](https://img.shields.io/badge/view-github%20action-yellow.svg)](https://promotedai.dev/r/gobenchdata)
+[![publish@v1](https://github.com/promotedai/gobenchdata/workflows/publish@v1/badge.svg)](https://github.com/promotedai/gobenchdata/actions?workflow=publish%40v1)
+[![pipeline](https://github.com/promotedai/gobenchdata/workflows/pipeline/badge.svg)](https://github.com/promotedai/gobenchdata/actions?workflow=pipeline)
+[![demo](https://github.com/promotedai/gobenchdata/workflows/demo/badge.svg)](https://github.com/promotedai/gobenchdata/actions?workflow=demo)
+[![Demo](https://img.shields.io/website/https/gobenchdata.promotedai.dev.svg?down_color=grey&down_message=offline&label=demo&up_message=live)](https://gobenchdata.promotedai.dev/)
 
 `gobenchdata` is a tool for parsing and inspecting `go test -bench` data, and a [GitHub Action](https://github.com/features/actions) for continuous benchmarking. It was inspired by the [`deno.land` continuous benchmarks](https://deno.land/benchmarks), which aims to display performance improvements and regressions on a continuous basis.
 
-<a href="https://gobenchdata.bobheadxi.dev/" target="_blank">
+<a href="https://gobenchdata.promotedai.dev/" target="_blank">
   <img align="right" width="500" src="./.static/demo-chart.png" alt="example">
 </a>
 
@@ -45,7 +45,7 @@ jobs:
     - name: checkout
       uses: actions/checkout@v2
     - name: gobenchdata publish
-      uses: bobheadxi/gobenchdata@v1
+      uses: promotedai/gobenchdata@v1
       with:
         PRUNE_COUNT: 30
         GO_TEST_FLAGS: -cpu 1,2
@@ -119,7 +119,7 @@ Instead of publishing results, benchmark output can be used to pass and fail pul
 using `CHECKS: true`. To get started, set up the checks configuration:
 
 ```sh
-go get -u go.bobheadxi.dev/gobenchdata
+go get -u go.promotedai.dev/gobenchdata
 gobenchdata checks generate
 ```
 
@@ -157,7 +157,7 @@ You can visualize these continuous benchmarks by creating a web app that reads
 from the JSON benchmarks file, or by using `gobenchdata`. An easy way to get started is:
 
 ```sh
-go get -u go.bobheadxi.dev/gobenchdata
+go get -u go.promotedai.dev/gobenchdata
 gobenchdata web generate --web.config-only .
 gobenchdata web serve # opens visualization in browser
 ```
@@ -179,7 +179,7 @@ select which metrics to display using the `metrics` option.
 ```yml
 title: gobenchdata web
 description: Benchmarks generated using 'gobenchdata'
-repository: https://github.com/bobheadxi/gobenchdata
+repository: https://github.com/promotedai/gobenchdata
 benchmarksFile: benchmarks.json
 chartGroups:
   - name: Demo Benchmarks
@@ -188,14 +188,14 @@ chartGroups:
       benchmarks to monitor performance improvements and regressions in your Golang benchmarks!
     charts:
       - name: specify charts by package
-        package: go.bobheadxi.dev\/gobenchdata\/demo
+        package: go.promotedai.dev\/gobenchdata\/demo
       - name: match on specific benchmarks across packages with glob patterns
         benchmarks: [ 'BenchmarkFib.' ]
   - name: More Demo Benchmarks
     description: Create multiple groups of benchmarks
     charts:
       - name: match by a combination of package and benchmarks
-        package: go.bobheadxi.dev\/gobenchdata\/.
+        package: go.promotedai.dev\/gobenchdata\/.
         benchmarks: [ 'BenchmarkPizzas.', '.FibSlow.' ]
 ```
 
@@ -216,7 +216,7 @@ gobenchdata web generate ./app
 is also available as a CLI:
 
 ```sh
-go get -u go.bobheadxi.dev/gobenchdata
+go get -u go.promotedai.dev/gobenchdata
 gobenchdata help
 ```
 
@@ -251,18 +251,18 @@ gobenchdata checks eval ${base benchmarks} ${current benchmarks} --checks.pretty
 
 |    |             CHECK              |              PACKAGE              |             BENCHMARK             | DIFF  | COMMENT |
 |----|--------------------------------|-----------------------------------|-----------------------------------|-------|---------|
-| ✅ | An example NsPerOp check       | go.bobheadxi.dev/gobenchdata/demo | BenchmarkFib10/Fib()              | -2.61 |         |
-| ✅ | An example NsPerOp check       | go.bobheadxi.dev/gobenchdata/demo | BenchmarkFib10/Fib()-2            | -2.85 |         |
-| ✅ | An example NsPerOp check       | go.bobheadxi.dev/gobenchdata/demo | BenchmarkFib10/FibSlow()          | -2.47 |         |
-| ✅ | An example NsPerOp check       | go.bobheadxi.dev/gobenchdata/demo | BenchmarkFib10/FibSlow()-2        | -2.19 |         |
-| ✅ | An example NsPerOp check       | go.bobheadxi.dev/gobenchdata/demo | BenchmarkPizzas/Pizzas()          | -1.85 |         |
-| ✅ | An example NsPerOp check       | go.bobheadxi.dev/gobenchdata/demo | BenchmarkPizzas/Pizzas()-2        | -2.45 |         |
-| ✅ | An example NsPerOp check       | go.bobheadxi.dev/gobenchdata/demo | BenchmarkPizzas/PizzasSquared()   | -5.71 |         |
-| ✅ | An example NsPerOp check       | go.bobheadxi.dev/gobenchdata/demo | BenchmarkPizzas/PizzasSquared()-2 | -3.03 |         |
-| ✅ | An example custom metric check | go.bobheadxi.dev/gobenchdata/demo | BenchmarkPizzas/Pizzas()          |  8.00 |         |
-| ✅ | An example custom metric check | go.bobheadxi.dev/gobenchdata/demo | BenchmarkPizzas/Pizzas()-2        |  4.00 |         |
-| ✅ | An example custom metric check | go.bobheadxi.dev/gobenchdata/demo | BenchmarkPizzas/PizzasSquared()   |  4.00 |         |
-| ✅ | An example custom metric check | go.bobheadxi.dev/gobenchdata/demo | BenchmarkPizzas/PizzasSquared()-2 |  1.00 |         |
+| ✅ | An example NsPerOp check       | go.promotedai.dev/gobenchdata/demo | BenchmarkFib10/Fib()              | -2.61 |         |
+| ✅ | An example NsPerOp check       | go.promotedai.dev/gobenchdata/demo | BenchmarkFib10/Fib()-2            | -2.85 |         |
+| ✅ | An example NsPerOp check       | go.promotedai.dev/gobenchdata/demo | BenchmarkFib10/FibSlow()          | -2.47 |         |
+| ✅ | An example NsPerOp check       | go.promotedai.dev/gobenchdata/demo | BenchmarkFib10/FibSlow()-2        | -2.19 |         |
+| ✅ | An example NsPerOp check       | go.promotedai.dev/gobenchdata/demo | BenchmarkPizzas/Pizzas()          | -1.85 |         |
+| ✅ | An example NsPerOp check       | go.promotedai.dev/gobenchdata/demo | BenchmarkPizzas/Pizzas()-2        | -2.45 |         |
+| ✅ | An example NsPerOp check       | go.promotedai.dev/gobenchdata/demo | BenchmarkPizzas/PizzasSquared()   | -5.71 |         |
+| ✅ | An example NsPerOp check       | go.promotedai.dev/gobenchdata/demo | BenchmarkPizzas/PizzasSquared()-2 | -3.03 |         |
+| ✅ | An example custom metric check | go.promotedai.dev/gobenchdata/demo | BenchmarkPizzas/Pizzas()          |  8.00 |         |
+| ✅ | An example custom metric check | go.promotedai.dev/gobenchdata/demo | BenchmarkPizzas/Pizzas()-2        |  4.00 |         |
+| ✅ | An example custom metric check | go.promotedai.dev/gobenchdata/demo | BenchmarkPizzas/PizzasSquared()   |  4.00 |         |
+| ✅ | An example custom metric check | go.promotedai.dev/gobenchdata/demo | BenchmarkPizzas/PizzasSquared()-2 |  1.00 |         |
 
 </p>
 </details>
@@ -273,6 +273,6 @@ For more details on how to use checks, see the [pull request checks documentatio
 
 ## Contributions
 
-Please report bugs and requests in the [repository issues](https://go.bobheadxi.dev/gobenchdata)!
+Please report bugs and requests in the [repository issues](https://go.promotedai.dev/gobenchdata)!
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for more detailed development documentation.

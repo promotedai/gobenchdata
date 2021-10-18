@@ -1,8 +1,8 @@
 FROM golang:latest
 
-LABEL maintainer="Robert Lin <robert@bobheadxi.dev>"
-LABEL repository="https://go.bobheadxi.dev/gobenchdata"
-LABEL homepage="https://bobheadxi.dev/r/gobenchdata"
+LABEL maintainer="Robert Lin <robert@promotedai.dev>"
+LABEL repository="https://go.promotedai.dev/gobenchdata"
+LABEL homepage="https://promotedai.dev/r/gobenchdata"
 LABEL version=v1
 
 # set up git

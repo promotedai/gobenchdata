@@ -5,7 +5,7 @@ import (
 	"html/template"
 	"io/ioutil"
 
-	"go.bobheadxi.dev/gobenchdata/internal"
+	"go.promotedai.dev/gobenchdata/internal"
 	"gopkg.in/yaml.v2"
 )
 

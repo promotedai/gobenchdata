@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"go.bobheadxi.dev/gobenchdata/internal"
+	"go.promotedai.dev/gobenchdata/internal"
 )
 
 // LineReader defines the API surface of bufio.Reader used by the parser

@@ -4,7 +4,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"go.bobheadxi.dev/gobenchdata/internal"
+	"go.promotedai.dev/gobenchdata/internal"
 	"gopkg.in/yaml.v2"
 )
 

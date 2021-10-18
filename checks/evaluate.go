@@ -8,8 +8,8 @@ import (
 
 	"github.com/antonmedv/expr"
 	"github.com/antonmedv/expr/vm"
-	"go.bobheadxi.dev/gobenchdata/bench"
-	"go.bobheadxi.dev/gobenchdata/internal"
+	"go.promotedai.dev/gobenchdata/bench"
+	"go.promotedai.dev/gobenchdata/internal"
 )
 
 // Status describes result of a check

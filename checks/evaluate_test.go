@@ -5,8 +5,8 @@ import (
 	"testing"
 
 	"github.com/antonmedv/expr"
-	"go.bobheadxi.dev/gobenchdata/bench"
-	"go.bobheadxi.dev/gobenchdata/internal"
+	"go.promotedai.dev/gobenchdata/bench"
+	"go.promotedai.dev/gobenchdata/internal"
 )
 
 func TestEnvDiffFunc_execute(t *testing.T) {

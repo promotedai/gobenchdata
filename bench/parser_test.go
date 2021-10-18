@@ -33,14 +33,14 @@ func TestParser_readBenchmarkSuite(t *testing.T) {
 	}{
 		{"go test -bench . ./...", fields{`goos: darwin
 goarch: amd64
-pkg: go.bobheadxi.dev/gobenchdata/demo
+pkg: go.promotedai.dev/gobenchdata/demo
 BenchmarkFib10/Fib()-12	3293298	330 ns/op
 BenchmarkPizzas/Pizzas()-12	25820055	50.0 ns/op	3.00 pizzas
 PASS`,
 		}, &Suite{
 			Goos:   "darwin",
 			Goarch: "amd64",
-			Pkg:    "go.bobheadxi.dev/gobenchdata/demo",
+			Pkg:    "go.promotedai.dev/gobenchdata/demo",
 			Benchmarks: []Benchmark{
 				{
 					Name: "BenchmarkFib10/Fib()-12", Runs: 3293298, NsPerOp: 330,
@@ -52,13 +52,13 @@ PASS`,
 		}, false},
 		{"go test -bench . -benchmem ./...", fields{`goos: darwin
 goarch: amd64
-pkg: go.bobheadxi.dev/gobenchdata/demo
+pkg: go.promotedai.dev/gobenchdata/demo
 BenchmarkFib10/FibSlow()-12	3033732	358 ns/op	16 B/op	1 allocs/op
 BenchmarkPizzas/Pizzas()-12	22866814	46.3 ns/op	9.00 pizzas	0 B/op	0 allocs/op
 PASS`}, &Suite{
 			Goos:   "darwin",
 			Goarch: "amd64",
-			Pkg:    "go.bobheadxi.dev/gobenchdata/demo",
+			Pkg:    "go.promotedai.dev/gobenchdata/demo",
 			Benchmarks: []Benchmark{
 				{
 					Name: "BenchmarkFib10/FibSlow()-12", Runs: 3033732, NsPerOp: 358, Mem: Mem{BytesPerOp: 16, AllocsPerOp: 1},

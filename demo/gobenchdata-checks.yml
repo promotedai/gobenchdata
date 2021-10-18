@@ -1,7 +1,7 @@
 checks:
   - name: An example NsPerOp check
     description: Use gobenchdata to enforce benchmark performance in your pull requests!
-    package: ^go.bobheadxi.dev/gobenchdata/demo$
+    package: ^go.promotedai.dev/gobenchdata/demo$
     benchmarks: [ '.' ]
     diff: (current.NsPerOp-base.NsPerOp) / base.NsPerOp * 100
     threshold:
@@ -9,7 +9,7 @@ checks:
 
   - name: An example custom metric check
     description: Reference custom metrics in your diff
-    package: ^go.bobheadxi.dev/gobenchdata/demo$
+    package: ^go.promotedai.dev/gobenchdata/demo$
     benchmarks: [ 'Pizzas' ]
     diff: current.Custom.pizzas
     threshold:

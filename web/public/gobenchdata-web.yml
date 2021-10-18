@@ -1,6 +1,6 @@
 title: gobenchdata web
 description: Benchmarks generated using 'gobenchdata'
-repository: https://github.com/bobheadxi/gobenchdata
+repository: https://github.com/promotedai/gobenchdata
 benchmarksFile: benchmarks.json
 chartGroups:
   - name: Demo Benchmarks
@@ -9,7 +9,7 @@ chartGroups:
       benchmarks to monitor performance improvements and regressions in your Golang benchmarks!
     charts:
       - name: specify charts by package, and only show specific metrics
-        package: go.bobheadxi.dev\/gobenchdata\/demo
+        package: go.promotedai.dev\/gobenchdata\/demo
         metrics:
           NsPerOp: true
           Mem.BytesPerOp: true
@@ -20,7 +20,7 @@ chartGroups:
     description: Create multiple groups of benchmarks
     charts:
       - name: match by a combination of package and benchmarks
-        package: go.bobheadxi.dev\/gobenchdata\/.
+        package: go.promotedai.dev\/gobenchdata\/.
         benchmarks: [ 'BenchmarkPizzas.', '.FibSlow.' ]
         display:
           fullWidth: true

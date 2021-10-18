@@ -11,8 +11,8 @@ import (
 	"github.com/olekukonko/tablewriter"
 	"github.com/spf13/pflag"
 
-	"go.bobheadxi.dev/gobenchdata/bench"
-	"go.bobheadxi.dev/gobenchdata/checks"
+	"go.promotedai.dev/gobenchdata/bench"
+	"go.promotedai.dev/gobenchdata/checks"
 )
 
 func statusEmoji(s checks.Status) string {
@@ -151,5 +151,5 @@ func showHelp() {
 	println(helpText)
 	println("FLAGS:\n")
 	pflag.PrintDefaults()
-	println("\nsee https://go.bobheadxi.dev/gobenchdata for more documentation.")
+	println("\nsee https://go.promotedai.dev/gobenchdata for more documentation.")
 }

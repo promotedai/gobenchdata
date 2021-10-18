@@ -54,7 +54,7 @@ function ToObject(o: any, typeOrCfg: any = {}, child = false): any {
 }
 
 // classes
-// struct2ts:go.bobheadxi.dev/gobenchdata/web.ConfigChartGroupChartChartDisplay
+// struct2ts:go.promotedai.dev/gobenchdata/web.ConfigChartGroupChartChartDisplay
 class ConfigChartGroupChartChartDisplay {
   fullWidth: boolean;
 
@@ -69,7 +69,7 @@ class ConfigChartGroupChartChartDisplay {
   }
 }
 
-// struct2ts:go.bobheadxi.dev/gobenchdata/web.ConfigChartGroupChart
+// struct2ts:go.promotedai.dev/gobenchdata/web.ConfigChartGroupChart
 class ConfigChartGroupChart {
   name: string;
   description: string;
@@ -94,7 +94,7 @@ class ConfigChartGroupChart {
   }
 }
 
-// struct2ts:go.bobheadxi.dev/gobenchdata/web.ConfigChartGroup
+// struct2ts:go.promotedai.dev/gobenchdata/web.ConfigChartGroup
 class ConfigChartGroup {
   name: string;
   description: string;
@@ -113,7 +113,7 @@ class ConfigChartGroup {
   }
 }
 
-// struct2ts:go.bobheadxi.dev/gobenchdata/web.Config
+// struct2ts:go.promotedai.dev/gobenchdata/web.Config
 class Config {
   title: string;
   description: string;
@@ -136,7 +136,7 @@ class Config {
   }
 }
 
-// struct2ts:go.bobheadxi.dev/gobenchdata/bench.RunSuiteBenchmarkMem
+// struct2ts:go.promotedai.dev/gobenchdata/bench.RunSuiteBenchmarkMem
 class RunSuiteBenchmarkMem {
   BytesPerOp: number;
   AllocsPerOp: number;
@@ -158,7 +158,7 @@ class RunSuiteBenchmarkMem {
   }
 }
 
-// struct2ts:go.bobheadxi.dev/gobenchdata/bench.RunSuiteBenchmark
+// struct2ts:go.promotedai.dev/gobenchdata/bench.RunSuiteBenchmark
 class RunSuiteBenchmark {
   Name: string;
   Runs: number;
@@ -183,7 +183,7 @@ class RunSuiteBenchmark {
   }
 }
 
-// struct2ts:go.bobheadxi.dev/gobenchdata/bench.RunSuite
+// struct2ts:go.promotedai.dev/gobenchdata/bench.RunSuite
 class RunSuite {
   Goos: string;
   Goarch: string;
@@ -204,7 +204,7 @@ class RunSuite {
   }
 }
 
-// struct2ts:go.bobheadxi.dev/gobenchdata/bench.Run
+// struct2ts:go.promotedai.dev/gobenchdata/bench.Run
 class Run {
   Version?: string;
   Date: number;

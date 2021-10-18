@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"go.bobheadxi.dev/gobenchdata/bench"
+	"go.promotedai.dev/gobenchdata/bench"
 )
 
 func Test_showHelp(t *testing.T) {
@@ -32,7 +32,7 @@ func Test_load(t *testing.T) {
 					{
 						Goos:   "linux",
 						Goarch: "amd64",
-						Pkg:    "go.bobheadxi.dev/gobenchdata/demo",
+						Pkg:    "go.promotedai.dev/gobenchdata/demo",
 						Benchmarks: []bench.Benchmark{
 							{Name: "BenchmarkFib10/Fib()", Runs: 2819560, NsPerOp: 419, Mem: bench.Mem{BytesPerOp: 0, AllocsPerOp: 0, MBPerSec: 0}, Custom: nil},
 							{Name: "BenchmarkFib10/Fib()-2", Runs: 2991747, NsPerOp: 412, Mem: bench.Mem{BytesPerOp: 0, AllocsPerOp: 0, MBPerSec: 0}, Custom: nil},
