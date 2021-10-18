@@ -50,7 +50,7 @@ git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${IN
 mkdir -p ~/.ssh
 ssh-keyscan github.com >> ~/.ssh/known_hosts
 ssh-agent -a ${SSH_AUTH_SOCK} > /dev/null
-ssh-add - <<< "${SSH_PRIVATE_KEY}"
+ssh-add - <<< "${SSH_KEY}"
 
 # run benchmarks from configured directory
 echo
