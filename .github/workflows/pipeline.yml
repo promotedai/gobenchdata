@@ -13,10 +13,11 @@ jobs:
     - run: go mod download
     - run: make check-go
     - run: go test -race -coverprofile=coverage.txt ./...
-    - uses: codecov/codecov-action@v1
-      with:
-        file: ./coverage.txt
-        fail_ci_if_error: true
+    # Dhill: disabled this since it's not important for our fork
+    # - uses: codecov/codecov-action@v1
+    #   with:
+    #     file: ./coverage.txt
+    #     fail_ci_if_error: true
 
   web:
     runs-on: ubuntu-latest
