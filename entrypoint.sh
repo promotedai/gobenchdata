@@ -43,7 +43,14 @@ echo '========================'
 mkdir -p /tmp/{gobenchdata,build}
 git config --global user.email "${GITHUB_ACTOR_EMAIL}"
 git config --global user.name "${GITHUB_ACTOR}"
+git config --global url."https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github".insteadOf https://github
 git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${INPUT_PUBLISH_REPO}
+
+# Set ssh keys for git
+mkdir -p ~/.ssh
+ssh-keyscan github.com >> ~/.ssh/known_hosts
+ssh-agent -a ${SSH_AUTH_SOCK} > /dev/null
+ssh-add - <<< "${SSH_PRIVATE_KEY}"
 
 # run benchmarks from configured directory
 echo
