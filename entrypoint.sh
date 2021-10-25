@@ -117,6 +117,7 @@ if [[ "${INPUT_PUBLISH}" == "true" ]]; then
     cp "${RUN_OUTPUT}" "${INPUT_BENCHMARKS_OUT}"
   fi
   # Actually generate the webpage.
+  [ ! -d "app" ] && mkdir app
   gobenchdata web generate ./app
 
   # publish results
