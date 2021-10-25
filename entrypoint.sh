@@ -116,6 +116,8 @@ if [[ "${INPUT_PUBLISH}" == "true" ]]; then
   else
     cp "${RUN_OUTPUT}" "${INPUT_BENCHMARKS_OUT}"
   fi
+  # Actually generate the webpage.
+  gobenchdata web generate ./app
 
   # publish results
   echo
