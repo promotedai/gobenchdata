@@ -1,3 +1,15 @@
+# Dan's edits
+
+This repo contains some hacked fixes from [bobheadxi/gobenchdata](https://github.com/bobheadxi/gobenchdata).
+
+## To release
+
+Create a new tag
+- `git tag -a v1.0.11 -m "version 1.0.11"`
+- `git push origin v1.0.11`
+
+Update the client repos to use the latest version.
+
 # 📉 gobenchdata
 
 [![View Action](https://img.shields.io/badge/view-github%20action-yellow.svg)](https://promotedai.dev/r/gobenchdata)
