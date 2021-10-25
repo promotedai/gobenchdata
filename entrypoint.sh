@@ -118,6 +118,8 @@ if [[ "${INPUT_PUBLISH}" == "true" ]]; then
   fi
   # Actually generate the webpage.
   [ ! -d "app" ] && mkdir app
+  # I can't get the benchmarks.json to be read from the parent directory so I'm copying it to the app directory.
+  cp "${INPUT_BENCHMARKS_OUT}" ./app/benchmarks.json
   gobenchdata web generate ./app
 
   # publish results
