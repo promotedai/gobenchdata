@@ -61,7 +61,8 @@ func (p *Parser) readBenchmarkSuite(first string) (*Suite, error) {
 			return nil, err
 		}
 		line := string(l)
-		if strings.HasPrefix(line, "PASS") || strings.HasPrefix(line, "FAIL") {
+		// Also ignore json logger lines. 
+		if strings.HasPrefix(line, "PASS") || strings.HasPrefix(line, "FAIL") || strings.HasPrefix(line, "{") {
 			break
 		} else if strings.HasPrefix(line, "goarch:") {
 			split = strings.Split(line, ": ")
