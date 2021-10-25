@@ -63,9 +63,11 @@ echo '📊 Running benchmarks...'
 RUN_OUTPUT="/tmp/gobenchdata/benchmarks.json"
 cd "${GITHUB_WORKSPACE}"
 cd "${INPUT_SUBDIRECTORY}"
-echo "Current directory=${pwd}"
+echo "Current directory=$(pwd)"
 echo "ls"
 ls
+# For some reason, our modified version hits this issue.
+export PATH=$PATH:$(go env GOPATH)/bin
 go test \
   -bench "${INPUT_GO_BENCHMARKS}" \
   -benchmem \
