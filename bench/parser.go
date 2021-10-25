@@ -70,6 +70,8 @@ func (p *Parser) readBenchmarkSuite(first string) (*Suite, error) {
 		} else if strings.HasPrefix(line, "pkg:") {
 			split = strings.Split(line, ": ")
 			suite.Pkg = split[1]
+		} else if strings.HasPrefix(line, "cpu") {
+			// Skip it.
 		} else {
 			bench, err := p.readBenchmark(line)
 			if err != nil {
