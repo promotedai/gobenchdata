@@ -63,11 +63,11 @@ echo '📊 Running benchmarks...'
 RUN_OUTPUT="/tmp/gobenchdata/benchmarks.json"
 cd "${GITHUB_WORKSPACE}"
 cd "${INPUT_SUBDIRECTORY}"
-echo "Current directory=$(pwd)"
-echo "ls"
-ls
+# https://github.community/t/environment-variables-are-overwritten-by-previous-actions-and-break-consecutive-docker-actions/122532/2
+unset GOROOT
+
 # For some reason, our modified version hits this issue.
-export PATH=$PATH:$(go env GOPATH)/bin
+# export PATH=$PATH:$(go env GOPATH)/bin
 go test \
   -bench "${INPUT_GO_BENCHMARKS}" \
   -benchmem \
