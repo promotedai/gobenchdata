@@ -63,6 +63,9 @@ echo '📊 Running benchmarks...'
 RUN_OUTPUT="/tmp/gobenchdata/benchmarks.json"
 cd "${GITHUB_WORKSPACE}"
 cd "${INPUT_SUBDIRECTORY}"
+echo "Current directory=${pwd}"
+echo "ls"
+ls
 go test \
   -bench "${INPUT_GO_BENCHMARKS}" \
   -benchmem \
