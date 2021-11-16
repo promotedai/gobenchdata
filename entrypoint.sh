@@ -80,7 +80,9 @@ cd "${GITHUB_WORKSPACE}"
 echo
 echo "📚 Checking out ${INPUT_PUBLISH_REPO}@${INPUT_PUBLISH_BRANCH}..."
 cd /tmp/build
+echo "Executing 'git clone https://${GITHUB_ACTOR}:hiddentoken@github.com/${INPUT_PUBLISH_REPO}.git .'"
 git clone https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${INPUT_PUBLISH_REPO}.git .
+echo "Executing 'git checkout ${INPUT_PUBLISH_BRANCH}'"
 git checkout ${INPUT_PUBLISH_BRANCH}
 echo
 
